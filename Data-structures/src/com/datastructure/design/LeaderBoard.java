@@ -38,25 +38,17 @@ public class LeaderBoard {
 	    }
 	    
 	    public int top(int K) {
-	        
 	        int result =0;
-			
 			List<Integer> list = new ArrayList<>(map.keySet());
-			
 			Collections.sort(list, (a,b) -> {
-			
 				return map.get(b)-map.get(a);
 				
 			});
-			
 			List<Integer> subList = list.subList(0, K);
-			
 			for(int i=0; i<K;i++) {
 				result += map.get(subList.get(i));
 			}
-			
 			return result;
-	        
 	    }
 	    
 	    public void reset(int playerId) {
